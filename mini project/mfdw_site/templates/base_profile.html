@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+ <style>
+            .sign_container{
+    border-style : none;
+    margin : 150px auto;
+    height : 600px;
+    width : 500px;
+}
+
+.form_title{
+    display : inline-flex;
+    border-style : none;
+    margin : 20px 50px;
+    height : 50px;
+    width : 400px;
+}
+
+.form_title_txt{
+    text-align : center;
+    font-family : arial;
+    font-size : 36px;
+    padding-bottom : 5px;
+    padding-top : 5px;
+    width : 400px;
+    height : 40px;
+    color : black;
+}
+
+.field_container{
+    border-style : none;
+    margin : 20px 50px;
+    height : 80px;
+    width : 400px;
+}
+
+.update_container{
+    /*background-color : black;*/
+    /*border-radius : 5px;*/
+    border-style : none;
+    height : 100px;
+    width : 400px;
+    margin : 50px 50px;
+}
+
+.custom_button{
+    text-shadow : 0px 1px 0px rgb(177, 175, 175);
+    background-color : #3d94f6;
+    border : 1px solid #337fed;
+    font-family : arial;
+    font-weight : bold;
+    border-radius : 5px;
+    margin : 25px 25px;
+    cursor : pointer;
+    font-size : 20px;
+    width : 350px;
+    height : 50px;
+
+}
+.custom_button:hover{
+    background-color : #1e62d0;
+}
+
+.custom_button:active{
+    position : relative;
+    top : 1px;
+}
+
+.custom_button_txt{
+    text-decoration: none;
+    color : white;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class = "sign_container">
+            <div class = "form_title">
+                <div class = "form_title_txt">{% block formtitle %}{% endblock %}</div>
+            </div>
+
+            <div class = "update_container">
+                <button class = "custom_button">
+                    <a href="{% url 'password_change' %}" class = "custom_button_txt">패스워드 변경하기</a>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
